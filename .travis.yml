@@ -1,19 +1,19 @@
-dist: xenial   # required for Python >= 3.7
+dist: xenial
 language: python
 python:
-  - "3.7"
-
-install: 
-   - pip3 install --upgrade pip 
-   - pip install coveralls
-   - pip install pytest
-   - npm install lcov-parse
-
-script: 
- pytest test.py -v --tb=no
-
+- '3.7'
+install:
+- pip3 install --upgrade pip
+- pip install coveralls
+- pip install pytest
+- npm install lcov-parse
+script: pytest test.py -v --tb=no
 after_success:
- - coveralls
+- coveralls
 notifications:
   webhooks:
-    - http://str-expert-cert-3359.botics.co/api/v1/challenge/check_builds/
+  - http://str-expert-cert-3359.botics.co/api/v1/challenge/check_builds/
+env:
+  global:
+  - secure: f2UHg2NGzZ4vQt+yOcM6dumo7a6QX8gsvTHhA5p+N4Tebhp8BMT7lk19Wuc9Yy/9fNytG+HY2eAaIoyz/NJ690PtqHmGPbdaKIc/w6/csomHrOXpLYgmIbt1gG7mLtUoQoeI4Insv4rb4/laSOeXpa1KU8sJixjI52D9SdoT/xNTWjEPUmgg+Jtg32kLdsAgpnd68Ka1+qUX/LZ0WIRk6+U7A8IMOU7d9SN0Q/s/YkiC3Kq0NKQfxGkm/19eN+ulDrvoqDjd8ZYQrSfkLhk211m6B4yMvEwLy3qn+Rfc4qRdnQe+HrThc/U46Ao9JJ4dtqi7Dved+x7owf/naVyBrmcVi+jtWd2Xle4bSVXyFhsXs9ArsLC+FHpMeo53DsKvVMrVjYDZcqrkMiiNu9qKm4O6FFO8B0c6PnpmEwmbqNZMuIcvy88oH+cjQXX0G4OJzOLSWqrowcFch7Ucpv/4YgD/6DkNwZEPQUo8IyImM8IwZJRKi4OS43wYJ9x847tN//W8eYu5MLSe/UVr2iqP7tMeu+0Pd858rU8KdXN413HI9E8U+qbV31iP1/kszbKPCRvaf76Uw6cOn9iwtPYRqgNMlN7qExRdO3bS2Qssj7N8R6YFB0I5VlOl4QDCOdcBSFQANmg7Ew9eeUMVRY+nTdWYbYbw2AN6xVqQ9LwrN8I=
+  - secure: a6YJP6GJmD5fjmdEYWYuQ34cCHLAg7ANhZ3D/oEJ7Gjv24Mca896tVMDbjLdhXHZ/VEe5rcXIo8uBdiMF+Vt84OiUT8VLtTUTFMNFY7TT/vTJGUidK7MZxoyBv3souPq8Sqp74DlcQAdW0JgjsEyNInZyhIyQcv9baktwqbQr+0P6O3BbjFIc9O4S9D/yXmZW++RnHWu94GYkUdhoyB9r9ElpaCKaRMcVftPVe7JB8VjZhGAbSbLfuAaqVcWqZU8XsFdxQzkBgCj2AWyZVjnTuYDzEtFtUZdnLVxEU9fja/HJsJhOh0n9wzpPtqPtAvhm+yBwJauBv8V8A9NaI4xKIUr6ml0Otm+8J34SWHEb+3HrD2GxwFR22dQk/9psOjxFIAEurisvX01t8LQFI1Kqw58bZPugCV4CtdAcaxFWjLjpG2Q3/jn9fG713GAOe0VARAeTwQ1DlL/GP7LW+XzB8/HzNS620zTU89W6c/HYXt0wKLcSBROWAhOuZ0f9Fmi7KmTKHVwn0U0TxmGrK2h2ydQT4q6J0LsZV7N6b92evw6ReqPraa97P6IyfA9tbZmKqVcSIS28wOnOnBNts8VUJLWgqZX8BzYsV58J99XtO6eShuFDAN3WjOFe5oV2y5/4UUTMNsIKARhXs/UEaXugMKgsDrgZUDGBmskgjaUP4A=
